@@ -1,0 +1,35 @@
+import = ["/home/amirsahrani/.config/alacritty/themes/themes/challenger_deep.toml"]
+
+[cursor]
+style = "Beam"
+
+
+[font]
+size = 14
+
+[font.bold]
+family = "IosevkaTerm Nerd Font Mono"
+style = "Bold"
+
+
+[font.italic]
+family = "IosevkaTerm Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "IosevkaTerm Nerd Font Mono"
+style = "Regular"
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["new-session", "-A", "-D", "-s", "general"]
+program = "/usr/bin/tmux"
+
+[window]
+decorations = "none"
+opacity = 0.8
+
+[env]
+TERM = "xterm-256color"
