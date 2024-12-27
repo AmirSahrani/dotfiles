@@ -1,0 +1,29 @@
+[Default Applications]
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/chrome=userapp-Firefox-VR1DP2.desktop
+text/html=brave-browser.desktop
+application/x-extension-htm=userapp-Firefox-VR1DP2.desktop
+application/x-extension-html=userapp-Firefox-VR1DP2.desktop
+application/x-extension-shtml=userapp-Firefox-VR1DP2.desktop
+application/xhtml+xml=userapp-Firefox-VR1DP2.desktop
+application/x-extension-xhtml=userapp-Firefox-VR1DP2.desktop
+application/x-extension-xht=userapp-Firefox-VR1DP2.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+application/pdf=appimagekit_8577b30fdf17983d9a042d9060740023-sioyek.desktop
+x-scheme-handler/prusaslicer=PrusaSlicerURLProtocol.desktop
+x-scheme-handler/ror2mm=r2modman.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Firefox-VR1DP2.desktop;
+x-scheme-handler/https=userapp-Firefox-VR1DP2.desktop;
+text/html=brave-browser.desktop;userapp-Firefox-VR1DP2.desktop;
+image/svg+xml=org.inkscape.Inkscape.desktop;
+image/png=vlc.desktop;
+application/pdf=brave-browser.desktop;appimagekit_8577b30fdf17983d9a042d9060740023-sioyek.desktop;org.pwmt.zathura-pdf-poppler.desktop;
+text/csv=org.gnome.gedit.desktop;
+image/jpeg=org.inkscape.Inkscape.desktop;
+audio/x-wav=appimagekit_246818accca9909520760150c1c51bab-audacity.desktop;
+video/webm=vlc.desktop;
+video/mp4=vlc.desktop;
