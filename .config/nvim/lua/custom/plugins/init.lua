@@ -2,4 +2,64 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  {
+    'onsails/lspkind.nvim',
+    opts = {
+      lazy = false,
+      symbol_map = {
+        Text = '',
+        Method = '',
+        Function = '󰊕',
+        Constructor = '',
+        Field = '󰽐',
+        Variable = '󰫧',
+        Class = '󰨡',
+        Interface = '',
+        Module = '',
+        Property = '',
+        Unit = '',
+        Value = 'λ',
+        Enum = '',
+        Keyword = '󱆟',
+        Snippet = '',
+        Color = '',
+        File = '󰈔',
+        Reference = '',
+        Folder = '',
+        EnumMember = '',
+        Constant = '',
+        Struct = '',
+        Event = '',
+        Operator = '',
+        TypeParameter = '󰉺',
+      },
+    },
+  },
+  {
+    'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function()
+      vim.g.barbar_auto_setup = false
+    end,
+    opts = {
+      animation = true,
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+  },
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { 'nvim-tree/nvim-web-devicons', opts = {} } },
+  },
+}
