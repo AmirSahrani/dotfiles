@@ -26,4 +26,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # echo 'set completion-ignore-case on' >> /etc/inputrc
+#
+FNM_PATH="/home/amirsahrani/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
 

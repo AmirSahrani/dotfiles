@@ -119,3 +119,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# fnm
+FNM_PATH="/home/amirsahrani/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
