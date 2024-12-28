@@ -87,16 +87,35 @@ fi
 if [ -f ~/dotfiles/.bash_envs ]; then
     . ~/dotfiles/.bash_envs
 fi
+if [ -f ~/dotfiles/.bash_functions ]; then
+    . ~/dotfiles/.bash_functions
+fi
 
 source ~/.local/bin/bashmarks.sh
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
-RT_SETTINGS=/home/amirsahrani/.config/rawtherapee/
-eval "$(oh-my-posh init bash --config /home/linuxbrew/.linuxbrew/opt/oh-my-posh/themes/clean-detailed.omp.json)"
+RT_SETTINGS=~/.config/rawtherapee/
+eval "$(oh-my-posh init bash --config /home/linuxbrew/.linuxbrew/opt/oh-my-posh/themes/illusi0n.omp.json)"
 
 # fnm
-FNM_PATH="/home/amirsahrani/.local/share/fnm"
+FNM_PATH="~/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/amir/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/amir/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/amir/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/amir/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
