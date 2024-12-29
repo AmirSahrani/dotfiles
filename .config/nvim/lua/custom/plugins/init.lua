@@ -5,36 +5,9 @@
 return {
   {
     'onsails/lspkind.nvim',
-    opts = {
-      lazy = false,
-      symbol_map = {
-        Text = '',
-        Method = '',
-        Function = '󰊕',
-        Constructor = '',
-        Field = '󰽐',
-        Variable = '󰫧',
-        Class = '󰨡',
-        Interface = '',
-        Module = '',
-        Property = '',
-        Unit = '',
-        Value = 'λ',
-        Enum = '',
-        Keyword = '󱆟',
-        Snippet = '',
-        Color = '',
-        File = '󰈔',
-        Reference = '',
-        Folder = '',
-        EnumMember = '',
-        Constant = '',
-        Struct = '',
-        Event = '',
-        Operator = '',
-        TypeParameter = '󰉺',
-      },
-    },
+    opts = function()
+      require 'custom.config.lspkind'
+    end,
   },
   {
     'romgrk/barbar.nvim',
@@ -48,7 +21,6 @@ return {
     opts = {
       animation = true,
     },
-    version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
   {
     'numToStr/Comment.nvim',
@@ -59,17 +31,23 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {},
-    -- Optional dependencies
     dependencies = { { 'nvim-tree/nvim-web-devicons', opts = {} } },
   },
   {
     'lervag/vimtex',
-    lazy = false, -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
+    lazy = false,
     init = function()
-      -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = 'zathura'
-      vim.g.vimtex_compiler_method = 'pdflatex'
+      require 'custom.config.vimtex'
     end,
   },
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require 'custom.config.harpoon'
+    end,
+  },
+
+  { 'GCBallesteros/jupytext.nvim', config = true },
 }

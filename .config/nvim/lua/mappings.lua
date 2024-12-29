@@ -1,8 +1,12 @@
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open Parent Directory' })
 
-vim.keymap.set('n', '<leader>x', '<CMD>BufferClose<CR>', { desc = 'Open Parent Directory' })
-vim.keymap.set('n', '<Tab>', '<CMD>BufferNext<CR>', { desc = 'Open Parent Directory' })
-vim.keymap.set('n', '<S-Tab>', '<CMD>BufferPrevious<CR>', { desc = 'Open Parent Directory' })
+vim.keymap.set('n', '<leader>x', '<CMD>BufferClose<CR>', { desc = 'Close current Buffer' })
+vim.keymap.set('n', '<Tab>', '<CMD>BufferNext<CR>', { desc = 'Go to next Buffer' })
+vim.keymap.set('n', '<S-Tab>', '<CMD>BufferPrevious<CR>', { desc = 'Go to previous Buffer' })
 vim.keymap.set('v', '<leader>/', '<Plug>(comment_toggle_blockwise_visual)', { desc = 'Block Comment' })
 vim.keymap.set('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', { desc = 'Line Comment' })
 vim.keymap.set('n', '<leader>ww', '<CMD>set linebreak<CR>', { desc = 'Line Comment' })
+
+vim.keymap.set('t', '<C-q>', [[<C-\><C-n>]], { desc = 'Exit to normal mode in terminal' })
+vim.keymap.set('n', '<M-i>', '<CMD>FloatTerminal<CR>', { desc = 'Open floating terminal window' })
+vim.keymap.set('t', '<M-i>', '<CMD>FloatTerminal<CR>', { desc = 'Open floating terminal window' })
