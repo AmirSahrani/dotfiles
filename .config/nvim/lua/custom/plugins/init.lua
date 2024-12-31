@@ -50,4 +50,15 @@ return {
   },
 
   { 'GCBallesteros/jupytext.nvim', config = true },
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      'rcarriga/nvim-dap-ui',
+      'theHamsta/nvim-dap-virtual-text',
+      'nvim-neotest/nvim-nio',
+    },
+    config = function()
+      require 'custom.config.dap'
+    end,
+  },
 }
