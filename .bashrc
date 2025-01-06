@@ -126,3 +126,5 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export EDITOR="nvim"
