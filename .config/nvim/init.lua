@@ -623,7 +623,7 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         ocamllsp = {
-          cmd = { '/home/amir/.opam/5.1.0/bin/ocamllsp' },
+          cmd = { vim.fn.expand '~/.opam/5.1.0/bin/ocamllsp' },
         },
         ltex = {
           cmd = { 'ltex-ls' },

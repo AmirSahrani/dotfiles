@@ -94,6 +94,7 @@ fi
 source ~/.local/bin/bashmarks.sh
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:~/local/lib/ltex-ls-16.0.0/bin"
+export PATH="$PATH:~/.opam/5.1.0/bin"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 RT_SETTINGS=~/.config/rawtherapee/
 eval "$(oh-my-posh init bash --config /home/linuxbrew/.linuxbrew/opt/oh-my-posh/themes/illusi0n.omp.json)"
