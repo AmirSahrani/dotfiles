@@ -622,7 +622,6 @@ require('lazy').setup {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-<<<<<<< Updated upstream
         ocamllsp = {
           cmd = { '/home/amir/.opam/5.1.0/bin/ocamllsp' },
         },
@@ -631,10 +630,7 @@ require('lazy').setup {
           filetypes = { 'markdown', 'text', 'tex' },
           flags = { debounce_text_changes = 1000 },
         },
-=======
-        ocamllsp = {},
         texlab = {},
->>>>>>> Stashed changes
         -- clangd = {},
         -- gopls = {},
         pyright = {},
