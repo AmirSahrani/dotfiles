@@ -620,7 +620,8 @@ require('lazy').setup {
       --  - filetypes (table): Override the default list of associated filetypes for the server
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local location = vim.fn.system('opam var bin'):gsub('\n', '') -- Removes trailing newline
+      local ocamllsp_cmd = location .. '/ocamllsp' --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         ocamllsp = {
           cmd = { vim.fn.expand '~/.opam/5.1.0/bin/ocamllsp' },
