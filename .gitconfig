@@ -2,8 +2,8 @@
 [user]
 	email = amirsahrani1@gmail.com
 # Please adapt and uncomment the following lines:
-#	name = Amir Sahrani
-#	email = amirsahrani1@gmail.com
+	name = Amir Sahrani
+	email = amirsahrani1@gmail.com
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
