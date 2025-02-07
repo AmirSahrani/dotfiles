@@ -77,5 +77,9 @@ return {
         require('luasnip').config.setup { enable_autosnippets = true, allow_on_markdown = true }
       end,
     },
+    {
+
+      'rebelot/kanagawa.nvim',
+    },
   },
 }

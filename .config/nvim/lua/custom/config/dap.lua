@@ -1,5 +1,3 @@
---[[Ocaml debugger is not quite working yet]]
-
 local setup = function()
   local dap = require 'dap'
   local ui = require 'dapui'
@@ -39,9 +37,10 @@ local setup = function()
   end
 
   -- Earlybird configuration with Mason path
+  local location = vim.fn.system('opam var bin'):gsub('\n', '') -- Removes trailing newline
   dap.adapters.ocaml = {
     type = 'executable',
-    command = vim.fn.expand '~/.local/share/nvim/mason/packages/ocamlearlybird/bin/ocamlearlybird',
+    command = 'ocamlearlybird',
     args = { 'debug' },
   }
 
@@ -50,9 +49,9 @@ local setup = function()
       type = 'ocaml',
       request = 'launch',
       name = 'Debug OCaml Program',
-      program = '${workspaceFolder}/_build/default/bin/main.bc',
+      program = '${workspaceFolder}/src/ocaml/_build/default/bin/main.bc',
       cwd = '${workspaceFolder}',
-      stopOnEntry = true,
+      stopOnEntry = false,
       console = 'integratedTerminal',
       internalConsoleOptions = 'openOnSessionStart',
       debugServer = 4711,
