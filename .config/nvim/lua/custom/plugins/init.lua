@@ -104,4 +104,5 @@ return {
       'rebelot/kanagawa.nvim',
     },
   },
+  { 'stevearc/vim-arduino' },
 }

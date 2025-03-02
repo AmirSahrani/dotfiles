@@ -10,3 +10,11 @@ vim.keymap.set('n', '<leader>ww', '<CMD>set linebreak<CR>', { desc = 'Line Comme
 vim.keymap.set('t', '<C-q>', [[<C-\><C-n>]], { desc = 'Exit to normal mode in terminal' })
 vim.keymap.set('n', '<M-i>', '<CMD>FloatTerminal<CR>', { desc = 'Open floating terminal window' })
 vim.keymap.set('t', '<M-i>', '<CMD>FloatTerminal<CR>', { desc = 'Open floating terminal window' })
+
+vim.keymap.set('n', '<leader>aa', '<cmd>ArduinoAttach<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>av', '<cmd>ArduinoVerify<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>au', '<cmd>ArduinoUpload<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>aus', '<cmd>ArduinoUploadAndSerial<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>as', '<cmd>ArduinoSerial<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>ab', '<cmd>ArduinoChooseBoard<CR>', { buffer = true })
+vim.keymap.set('n', '<leader>ap', '<cmd>ArduinoChooseProgrammer<CR>', { buffer = true })
