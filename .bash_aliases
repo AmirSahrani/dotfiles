@@ -20,3 +20,4 @@ alias ls='ls -A -F --group-directories-first --sort=extension --color=always'
 # alias l='ls -CF'
 #
 alias snvim='sudo -E nvim'
+alias nfzf='nvim $(fzf)'
