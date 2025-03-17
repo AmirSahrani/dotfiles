@@ -102,6 +102,9 @@ return {
     {
 
       'rebelot/kanagawa.nvim',
+      config = function()
+        require 'custom.config.kanagawa'
+      end,
     },
     {
       'hat0uma/csvview.nvim',

@@ -1,4 +1,4 @@
-import = ["~/dotfiles/.config/alacritty/themes/hardhacker.toml"]
+import = ["~/dotfiles/.config/alacritty/themes/kanagawa_wave.toml"]
 
 [cursor]
 style = "Beam"
