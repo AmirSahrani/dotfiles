@@ -1,7 +1,8 @@
-require('kanagawa').setup {
+local kanagawa = require 'kanagawa'
+kanagawa.setup {
   compile = false, -- enable compiling the colorscheme
   undercurl = true, -- enable undercurls
-  commentStyle = { italic = true },
+  commentStyle = { italic = false },
   functionStyle = {},
   keywordStyle = { italic = true },
   statementStyle = { bold = true },
@@ -11,12 +12,12 @@ require('kanagawa').setup {
   terminalColors = true, -- define vim.g.terminal_color_{0,17}
   colors = { -- add/modify theme and palette colors
     palette = {},
-    theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    all = {
+    theme = { wave = {}, lotus = {}, dragon = {}, all = {
+
       ui = {
         bg_gutter = 'none',
       },
-    },
+    } },
   },
   overrides = function(colors) -- add/modify highlights
     return {}
