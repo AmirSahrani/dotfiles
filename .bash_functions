@@ -25,3 +25,7 @@ word_index() {
 if [ "$SHLVL" = 1 ]; then
     [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
 fi
+
+convert_davinci () {
+ffmpeg -i $1 -c:v dnxhd -vf "fps=24,format=yuv422p" -profile:v dnxhr_hq $2
+}

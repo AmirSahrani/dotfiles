@@ -636,7 +636,27 @@ require('lazy').setup {
         texlab = {},
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          on_init = function(client)
+            -- Try to detect the virtual environment from uv
+            local venv = os.getenv 'VIRTUAL_ENV'
+            if venv then
+              client.config.settings.python = {
+                pythonPath = venv .. '/bin/python',
+              }
+              client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
+            end
+          end,
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
+              },
+            },
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

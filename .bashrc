@@ -106,34 +106,3 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/amir/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/amir/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/amir/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/amir/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# fnm
-FNM_PATH="/home/amirsahrani/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-export PATH="$PATH:/opt/nvim-linux64/bin"
-export EDITOR="nvim"
-
-# fnm
-FNM_PATH="/home/amir/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi

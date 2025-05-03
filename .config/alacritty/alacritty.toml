@@ -8,12 +8,12 @@ style = "Beam"
 size = 14
 
 [font.bold]
-family = "Iosevka Amir Nerd Font"
+family = "Iosevka Term"
 style = "Bold"
 
 
 [font.italic]
-family = "Iosevka Amir Nerd Font"
+family = "Iosevka Term"
 style = "Italic"
 
 [font.normal]
