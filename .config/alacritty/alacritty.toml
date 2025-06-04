@@ -1,4 +1,4 @@
-import = ["~/dotfiles/.config/alacritty/themes/kanagawa_wave.toml"]
+import = ["~/dotfiles/.config/alacritty/themes/rose_pine_moon.toml"]
 
 [cursor]
 style = "Beam"
