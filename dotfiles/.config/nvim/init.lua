@@ -629,6 +629,14 @@ require('lazy').setup {
           filetypes = { 'markdown', 'text', 'tex' },
           flags = { debounce_text_changes = 1000 },
         },
+
+        pyright = {
+          settings = {
+            python = {
+              pythonPath = vim.fn.getcwd() .. '/.venv/bin/python',
+            },
+          },
+        },
         texlab = {},
 
         -- clangd = {},

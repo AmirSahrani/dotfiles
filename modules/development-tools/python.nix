@@ -7,6 +7,6 @@
     nix-index
     lazygit
 
+    python3Packages.euporie
   ];
-
 }

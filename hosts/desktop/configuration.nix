@@ -13,14 +13,15 @@
       ../../modules/games
       ../../modules/cosmetics.nix
       ../../modules/development-tools/general.nix
+      ../../modules/development-tools/python.nix
       ../../modules/system/gpu_3090.nix
       ../../modules/system/default.nix
     ];
 
+  services.upower.enable = true;
   swapDevices =
     [ { device = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820"; }
     ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

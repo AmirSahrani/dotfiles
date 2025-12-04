@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    nix-index
     chayang
     wl-clipboard
     libnotify

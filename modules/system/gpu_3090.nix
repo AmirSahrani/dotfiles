@@ -8,6 +8,7 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia" "modesetting"];
+  hardware.graphics.enable32Bit = true;
   hardware.nvidia = {
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.

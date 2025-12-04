@@ -339,7 +339,7 @@ spawn-at-startup "waybar"
 
 spawn-at-startup "alacritty" "-e" "tmux"
 
-spawn-at-startup "swaybg" "-i" "/etc/nixos/wallpapers/Pwettyfwowers.jpg" "-m" "fill"
+spawn-at-startup "swaybg" "-i" "/etc/nixos/wallpapers/Playground.jpg" "-m" "fill"
 
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
