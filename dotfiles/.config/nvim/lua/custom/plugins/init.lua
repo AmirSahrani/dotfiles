@@ -129,4 +129,6 @@ return {
     },
   },
   { 'stevearc/vim-arduino' },
+  { 'gpanders/nvim-parinfer' },
+  { 'elkowar/yuck.vim' },
 }

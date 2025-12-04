@@ -22,7 +22,7 @@
     ];
 
   stylix.enable = true;
-  stylix.image = ../../wallpapers/Playground.jpg;
+  stylix.image = ../../wallpapers/jjk.png;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
 
   stylix.cursor.package = pkgs.bibata-cursors;
@@ -141,7 +141,7 @@
   environment.systemPackages = with pkgs; [
      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
-     librewolf
+     firefox
      brave
      tmux
      alacritty

@@ -1,0 +1,38 @@
+(defwindow bar
+  :monitor 3
+  :geometry (geometry :x "0%"
+                      :y "0px"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "top center")
+  :stacking "overlay"
+  :exclusive true
+  :windowtype "dock"
+  (centerbox
+    :orientation "horizontal"
+    (leftbox)
+    (box)
+    (box)))
+
+(defvar time-visible true)
+
+(defpoll time :interval "5s"
+              :initial "initial-value"
+              :run-while time-visible
+  `date +%H:%M`)
+
+(defwidget centerbox []
+  (box
+    :class "centerbox"
+    :orientation "horizontal"
+    :space-evenly false
+    (label :text time)))
+
+(defwidget leftbox []
+  (box
+    :class "leftbox"
+    :orientation "horizontal"
+    :space-evenly false
+    (systray :spacing 3
+             :orientation "horizontal"
+             :icon-size 16)))

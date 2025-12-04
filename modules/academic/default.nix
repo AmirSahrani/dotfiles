@@ -15,6 +15,6 @@ with lib; {
   zathura
   sioyek
   rendercv
-  calligra
-  ];
+  thunderbird
+    ];
 }

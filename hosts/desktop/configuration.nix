@@ -10,43 +10,37 @@
       ./hardware-configuration.nix
       ./amir-sahrani.nix
       inputs.home-manager.nixosModules.default
-      ../../modules
       ../../modules/games
-      ../../modules/system/gpu_3090.nix
-      ../../modules/development-tools/python.nix
-      ../../modules/development-tools/cybersecurity.nix
-      ../../modules/development-tools/game-dev.nix
+      ../../modules/cosmetics.nix
       ../../modules/development-tools/general.nix
+      ../../modules/system/gpu_3090.nix
       ../../modules/system/default.nix
-      ../../modules/system/power_management_system.nix
     ];
 
-  stylix.enable = true;
-  stylix.image = ../../wallpapers/Playground.jpg;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820"; }
+    ];
 
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
-  stylix.cursor.size = 14;
-  stylix.opacity = {
-      applications = 1.0;
-      terminal = 0.8;
-      desktop = 1.0;
-      popups = 0.9;
-    };
-
-
-  swapDevices = [{
-      device = "/swapfile";
-      size = 16 * 1024; # 16GB
-    }];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.firmware = [ 
+      (pkgs.runCommand "benq-edid" {} ''
+	mkdir -p $out/lib/firmware/edid
+	cp ${./monitor.bin} $out/lib/firmware/edid/benq.bin
+      '')
+    ];
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.resumeDevice = "/swapfile";
+  boot.kernelParams = [     
+    "nvidia-drm.fbdev=1"
+    "video=HDMI-A-1:2560x1440@60e"
+    ];
+  boot.extraModprobeConfig = ''
+    options drm_kms_helper edid_firmware=HDMI-A-1:edid/benq.bin
+  '';
+  boot.resumeDevice = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820";
 
   networking.hostName = "nixos"; #Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -82,10 +76,12 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  
+  services.xserver.videoDrivers = ["nvidia"];
+  services.gvfs.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland= true;
   # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -124,7 +120,6 @@
     description = "Amir Sahrani";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     ];
     };
 
@@ -141,10 +136,8 @@
   environment.systemPackages = with pkgs; [
      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
-     librewolf
      brave
      tmux
-     alacritty
      waybar
      swaybg
      ripgrep
@@ -167,6 +160,7 @@
   	users = {
   		"amir" = import ./home.nix;
 		};
+	backupFileExtension = "bkp";
   };
 
   programs.niri.enable = true;

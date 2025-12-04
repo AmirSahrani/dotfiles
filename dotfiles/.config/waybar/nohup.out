@@ -1,0 +1,46 @@
+[2025-11-30 20:28:33.948] [info] Using configuration file /home/amir/.config/waybar/config
+[2025-11-30 20:28:33.950] [info] Using CSS file /home/amir/.config/waybar/style.css
+[2025-11-30 20:28:33.954] [info] Niri IPC starting
+[2025-11-30 20:28:33.961] [warning] No batteries.
+
+(waybar:96172): GLib-GObject-CRITICAL **: 20:28:33.961: invalid (NULL) pointer instance
+
+(waybar:96172): GLib-GObject-CRITICAL **: 20:28:33.961: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(waybar:96172): GLib-GObject-CRITICAL **: 20:28:33.985: invalid (NULL) pointer instance
+
+(waybar:96172): GLib-GObject-CRITICAL **: 20:28:33.985: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+[2025-11-30 20:28:34.001] [warning] No batteries.
+[2025-11-30 20:28:34.118] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:34.122] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:34.235] [info] Bar configured (width: 2560, height: 20) for output: HDMI-A-1
+[2025-11-30 20:28:34.236] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:34.236] [info] Bar configured (width: 2560, height: 20) for output: DP-1
+[2025-11-30 20:28:34.236] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:52.662] [info] Using configuration file /home/amir/.config/waybar/config
+[2025-11-30 20:28:52.664] [info] Using CSS file /home/amir/.config/waybar/style.css
+[2025-11-30 20:28:52.669] [info] Niri IPC starting
+[2025-11-30 20:28:52.676] [warning] No batteries.
+
+(waybar:96262): GLib-GObject-CRITICAL **: 20:28:52.676: invalid (NULL) pointer instance
+
+(waybar:96262): GLib-GObject-CRITICAL **: 20:28:52.676: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(waybar:96262): GLib-GObject-CRITICAL **: 20:28:52.684: invalid (NULL) pointer instance
+
+(waybar:96262): GLib-GObject-CRITICAL **: 20:28:52.684: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+[2025-11-30 20:28:52.701] [warning] No batteries.
+[2025-11-30 20:28:52.920] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:52.924] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:52.941] [info] Bar configured (width: 2560, height: 20) for output: HDMI-A-1
+[2025-11-30 20:28:52.942] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-11-30 20:28:52.942] [info] Bar configured (width: 2560, height: 20) for output: DP-1
+[2025-11-30 20:28:52.942] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+
+(pavucontrol:97603): Gdk-WARNING **: 20:29:54.905: vkAcquireNextImageKHR(): A surface has changed in such a way that it is no longer compatible with the swapchain. (VK_ERROR_OUT_OF_DATE_KHR) (-1000001004)
+
+(pavucontrol:119461): Gdk-WARNING **: 20:36:13.550: vkAcquireNextImageKHR(): A surface has changed in such a way that it is no longer compatible with the swapchain. (VK_ERROR_OUT_OF_DATE_KHR) (-1000001004)
+
+(pavucontrol:119461): Gdk-WARNING **: 20:37:32.934: vkAcquireNextImageKHR(): A surface has changed in such a way that it is no longer compatible with the swapchain. (VK_ERROR_OUT_OF_DATE_KHR) (-1000001004)
+
+(pavucontrol:119461): Gdk-WARNING **: 20:37:34.031: vkAcquireNextImageKHR(): A surface has changed in such a way that it is no longer compatible with the swapchain. (VK_ERROR_OUT_OF_DATE_KHR) (-1000001004)

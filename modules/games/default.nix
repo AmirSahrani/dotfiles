@@ -17,6 +17,7 @@ with lib; {
     winetricks
     protontricks
     vulkan-tools
+    r2modman
     ];
 } 
 

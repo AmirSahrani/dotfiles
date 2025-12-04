@@ -12,7 +12,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };   
-    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -22,19 +21,21 @@
     desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          ./modules
           ./hosts/desktop/configuration.nix
+          ./hosts/desktop/hardware-configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
-          ./modules
         ];
       };
     laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          ./modules
           ./hosts/laptop/configuration.nix
+          ./hosts/laptop/hardware-configuration.nix
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
-          ./modules
         ];
       };
 

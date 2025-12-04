@@ -74,10 +74,10 @@ input {
 // The built-in laptop monitor is usually called "eDP-1".
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
+// Remember to uncomment the node by removing "/-"! PNP(BNQ) BenQ PD2500Q G7K0453801Q
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    // off
+    off
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
@@ -85,7 +85,7 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@60.030"
+    // mode "1920x1080@60.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -104,6 +104,68 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
+
+}
+output "DP-1" {
+    // Uncomment this line to disable this output.
+    // off
+
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    // If the refresh rate is omitted, nir will pick the highest refresh rate
+    // for the resolution.
+    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    mode "2560x1440@60.030"
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale and rotation has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // If the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    position x=2560  y=0
+
+}
+output "HDMI-A-1" {
+    // Uncomment this line to disable this output.
+    // off
+
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    // If the refresh rate is omitted, nir will pick the highest refresh rate
+    // for the resolution.
+    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    // mode "2560x1440@60.030"
+    // Use the modeline from cvt
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    scale 1
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+
+    // Position of the output in the global coordinate space.
+    // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
+    // The cursor can only move between directly adjacent outputs.
+    // Output scale and rotation has to be taken into account for positioning:
+    // outputs are sized in logical, or scaled, pixels.
+    // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
+    // so to put another output directly adjacent to it on the right, set its x to 1920.
+    // If the position is unset or results in an overlap, the output is instead placed
+    // automatically.
+    position x=0 y=0
 
 }
 
@@ -168,13 +230,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#3c3836"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -183,7 +245,7 @@ layout {
         // You can use any CSS linear-gradient tool on the web to set these up.
         // Changing the color space is also supported, check the wiki for more info.
         //
-        // active-gradient from="#80c8ff" to="#c7ff7f" angle=45
+        active-gradient from="#98971a" to="#458588" angle=145
 
         // You can also color the gradient relative to the entire view
         // of the workspace, rather than relative to just the window itself.
@@ -271,7 +333,15 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "sunsetr"
 
+spawn-at-startup "start_scraper.sh"
+
 spawn-at-startup "waybar"
+
+spawn-at-startup "alacritty" "-e" "tmux"
+
+spawn-at-startup "swaybg" "-i" "/etc/nixos/wallpapers/Pwettyfwowers.jpg" "-m" "fill"
+
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -325,12 +395,12 @@ window-rule {
     default-column-width {}
 }
 
-// Open the librewolf picture-in-picture player as floating by default.
+// Open the firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
-    // - host librewolf (app-id is "firefox")
-    // - Flatpak librewolf (app-id is "org.mozilla.firefox")
-    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
+    // - host firefox (app-id is "firefox")
+    // - Flatpak firefox(app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
@@ -370,7 +440,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty" "-e" "tmux"; }
-    Mod+B hotkey-overlay-title="Open a Browser: librewolf" { spawn "librewolf"; }
+    Mod+B hotkey-overlay-title="Open a Browser: firefox" { spawn "firefox"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -379,6 +449,7 @@ binds {
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
     Super+Shift+A  allow-when-locked=false hotkey-overlay-title=null {spawn-sh "makoctl dismiss -a"; }
+    Super+Shift+C  allow-when-locked=false hotkey-overlay-title=null {spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Super+P  allow-when-locked=false hotkey-overlay-title=null {spawn-sh "playerctl play-pause"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.

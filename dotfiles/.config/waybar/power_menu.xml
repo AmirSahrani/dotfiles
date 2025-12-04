@@ -2,26 +2,26 @@
 <interface>
   <object class="GtkMenu" id="menu">
 	<child>
-		<object class="GtkMenuItem" id="suspend">
-			<property name="label">Suspend</property>
+		<object class="GtkMenuSlider" id="volume_slider">
+			<property name="label"> Speaker Volume </property>
         </object>
 	</child>
 	<child>
-        <object class="GtkMenuItem" id="hibernat">
-			<property name="label">Hibernate</property>
+        <object class="GtkMenuSlider" id="mic_slider">
+			<property name="label"> Mic Volume </property>
         </object>
 	</child>
-    <child>
-        <object class="GtkMenuItem" id="shutdown">
-			<property name="label">Shutdown</property>
-        </object>
-    </child>
     <child>
       <object class="GtkSeparatorMenuItem" id="delimiter1"/>
     </child>
     <child>
-		<object class="GtkMenuItem" id="reboot">
-			<property name="label">Reboot</property>
+		<object class="GtkMenuDropDown" id="sink_selector">
+			<property name="label"> Audio Device </property>
+		</object>
+    </child>
+    <child>
+		<object class="GtkMenuDropDown" id="source_selector">
+			<property name="label"> Input Device </property>
 		</object>
     </child>
   </object>

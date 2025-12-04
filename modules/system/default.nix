@@ -2,15 +2,28 @@
 
 {
   environment.systemPackages = with pkgs; [
+    chayang
+    wl-clipboard
+    libnotify
+    cliphist
+    tldr
     udisks
     udiskie
     btop
-    brightnessctl
+    xdg-desktop-portal-gnome
+    gnome-system-monitor
+    wlr-randr
     sunsetr
     nsxiv
     protonvpn-gui
     monitor
+
+
+
     playerctl
+    pwvucontrol
+    vlc
+    mpv
 
   ];
   xdg.portal.extraPortals = with pkgs ; [
@@ -18,4 +31,5 @@
 	xdg-desktop-portal-gtk
   ];
   services.udisks2.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
 }

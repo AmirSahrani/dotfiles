@@ -20,6 +20,7 @@ with lib; {
             "custom/divider"
             "memory"
             "custom/divider"
+            "disk"
             "privacy"
           ];
 
@@ -56,22 +57,22 @@ with lib; {
               };
           "clock" = {
             format =
-              '' {:L%H:%M}'';
+              ''  {:L%H:%M}'';
             tooltip = true;
             tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
           };
           "memory" = {
             interval = 5;
-            format = " {}%";
+            format = "  {}%";
             tooltip = true;
           };
           "cpu" = {
             interval = 5;
-            format = " {usage:2}%";
+            format = "  {usage:2}%";
             tooltip = true;
           };
           "disk" = {
-            format = " {free}";
+            format = "  {free}";
             tooltip = true;
           };
           "network" = {
@@ -82,20 +83,28 @@ with lib; {
               "󰤥"
               "󰤨"
             ];
-            format-ethernet = " {bandwidthDownOctets}";
+            format-ethernet = " {bandwidthDownBytes}";
             format-wifi = "{icon} {signalStrength}%";
             format-disconnected = "󰤮";
             tooltip = true;
           };
+          "niri/workspaces" = {
+            format = "{icon}";  # Show workspace name and icon
+            format-icons = {
+              "active"= "";
+              "default"= "";
+              };
+            };
           "tray" = {
+            icon= "▦";
             spacing = 12;
           };
           "pulseaudio" = {
-            format = "{icon} {volume}% {format_source}";
+            format = "{icon}  {volume}% {format_source}";
             format-bluetooth = "{volume}% {icon} {format_source}";
             format-bluetooth-muted = " {icon} {format_source}";
             format-muted = " {format_source}";
-            format-source = " {volume}%";
+            format-source = "  {volume}%";
             format-source-muted = "";
             format-icons = {
               headphone = "";
@@ -110,7 +119,7 @@ with lib; {
                 ""
               ];
             };
-            on-click = "sleep 0.1 && pavucontrol";
+            on-click = "sleep 0.01 && pwvucontrol";
           };
           "idle_inhibitor" = {
             format = "{icon}";
@@ -145,42 +154,7 @@ with lib; {
           };
         }
       ];
-      style = concatStrings [
-        ''
-          * {
-            font-size: 14px;
-            border-radius: 0px;
-            border: none;
-            min-height: 20px;
-          }
-          #workspaces button {
-            padding: 0px 5px;
-            background: transparent;
-          }
-          #workspaces button.active {
-          }
-          #workspaces button:hover {
-          }
-          tooltip {
-            border-radius: 12px;
-          }
-          tooltip label {
-          }
-          #window {
-            padding: 0px 10px;
-          }
-          #pulseaudio, #cpu, #memory, #idle_inhibitor {
-            padding: 0px 10px;
-          }
-          #tray {
-            padding: 0px 10px;
-          }
-          #clock {
-            font-weight: bold;
-            padding: 0px 10px;
-          }
-        ''
-      ];
+    style = lib.mkForce (config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/waybar/style.css");
     };
   }
 

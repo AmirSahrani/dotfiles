@@ -1,0 +1,129 @@
+[2025-12-04 13:56:42.415] [info] Using configuration file /home/amir/.config/waybar/config
+[2025-12-04 13:56:42.417] [info] Using CSS file /home/amir/.config/waybar/style.css
+[2025-12-04 13:56:42.422] [info] Niri IPC starting
+[2025-12-04 13:56:42.429] [warning] No batteries.
+[2025-12-04 13:56:42.429] [warning] Error while creating the menu : Error found in the file /etc/nixos/dotfiles/.config/waybar/power_menu.xml. Menu popup not activated.
+[2025-12-04 13:56:42.437] [warning] No batteries.
+[2025-12-04 13:56:42.457] [warning] Error while creating the menu : Error found in the file /etc/nixos/dotfiles/.config/waybar/power_menu.xml. Menu popup not activated.
+[2025-12-04 13:56:42.685] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-12-04 13:56:42.687] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-12-04 13:56:42.699] [info] Bar configured (width: 2560, height: 29) for output: HDMI-A-1
+[2025-12-04 13:56:42.700] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-12-04 13:56:42.702] [info] Bar configured (width: 2560, height: 29) for output: DP-1
+[2025-12-04 13:56:42.703] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:56.985: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:56.985: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.029: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.029: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.399: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.399: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.601: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.601: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.793: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:19:58.793: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:00.079: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:00.079: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:00.969: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:00.969: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:04.217: gtk_widget_show_all: assertion 'GTK_IS_WIDGET (widget)' failed
+
+(waybar:60428): Gtk-CRITICAL **: 14:20:04.217: gtk_menu_popup_at_pointer: assertion 'GTK_IS_MENU (menu)' failed
+[2025-12-04 14:20:28.449] [error] Item 'nm-applet': Could not find an icon named 'nm-no-connection' and no pixmap given.
+[2025-12-04 14:20:28.449] [error] Item 'nm-applet': Could not find an icon named 'nm-no-connection' and no pixmap given.
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 14:20:29.005: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 14:20:29.008: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 14:20:29.103: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 14:20:29.105: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:05.338: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:05.342: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:05.437: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:05.439: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:06.343: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:06.346: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:06.438: Unable to replace properties on 0: Error getting properties for ID
+
+(waybar:60428): LIBDBUSMENU-GLIB-WARNING **: 16:24:06.440: Unable to replace properties on 0: Error getting properties for ID
+[2025-12-04 16:24:07.821] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:07.822] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:07.921] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:07.921] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:08.023] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:08.023] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:08.121] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:08.121] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:08.221] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:08.221] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:08.321] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting06' and no pixmap given.
+[2025-12-04 16:24:08.321] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting06' and no pixmap given.
+[2025-12-04 16:24:08.421] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting07' and no pixmap given.
+[2025-12-04 16:24:08.422] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting07' and no pixmap given.
+[2025-12-04 16:24:08.521] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting08' and no pixmap given.
+[2025-12-04 16:24:08.522] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting08' and no pixmap given.
+[2025-12-04 16:24:08.621] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting09' and no pixmap given.
+[2025-12-04 16:24:08.622] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting09' and no pixmap given.
+[2025-12-04 16:24:08.721] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting10' and no pixmap given.
+[2025-12-04 16:24:08.722] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting10' and no pixmap given.
+[2025-12-04 16:24:08.822] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting11' and no pixmap given.
+[2025-12-04 16:24:08.822] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting11' and no pixmap given.
+[2025-12-04 16:24:08.922] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:08.923] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:09.022] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:09.022] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:09.122] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:09.122] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:09.222] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:09.222] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:09.322] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:09.323] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:09.423] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting06' and no pixmap given.
+[2025-12-04 16:24:09.423] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting06' and no pixmap given.
+[2025-12-04 16:24:09.522] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting07' and no pixmap given.
+[2025-12-04 16:24:09.523] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting07' and no pixmap given.
+[2025-12-04 16:24:09.622] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting08' and no pixmap given.
+[2025-12-04 16:24:09.623] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting08' and no pixmap given.
+[2025-12-04 16:24:09.723] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting09' and no pixmap given.
+[2025-12-04 16:24:09.723] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting09' and no pixmap given.
+[2025-12-04 16:24:09.823] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting10' and no pixmap given.
+[2025-12-04 16:24:09.824] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting10' and no pixmap given.
+[2025-12-04 16:24:09.923] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting11' and no pixmap given.
+[2025-12-04 16:24:09.924] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting11' and no pixmap given.
+[2025-12-04 16:24:10.023] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:10.024] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting01' and no pixmap given.
+[2025-12-04 16:24:10.123] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:10.124] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting02' and no pixmap given.
+[2025-12-04 16:24:10.224] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:10.224] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting03' and no pixmap given.
+[2025-12-04 16:24:10.323] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:10.324] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting04' and no pixmap given.
+[2025-12-04 16:24:10.424] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:10.424] [error] Item 'nm-applet': Could not find an icon named 'nm-stage03-connecting05' and no pixmap given.
+[2025-12-04 16:24:10.511] [error] Item 'nm-applet': Could not find an icon named 'nm-no-connection' and no pixmap given.
+[2025-12-04 16:24:10.512] [error] Item 'nm-applet': Could not find an icon named 'nm-no-connection' and no pixmap given.
+[2025-12-04 16:24:13.359] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
+[2025-12-04 16:24:13.360] [error] Item 'nm-applet': Could not find an icon named 'nm-device-wired' and no pixmap given.
