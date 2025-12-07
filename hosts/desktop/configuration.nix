@@ -33,7 +33,7 @@
       '')
     ];
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [     
     "nvidia-drm.fbdev=1"
     "video=HDMI-A-1:2560x1440@60e"

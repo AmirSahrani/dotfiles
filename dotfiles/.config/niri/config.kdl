@@ -333,7 +333,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "sunsetr"
 
-spawn-at-startup "start_scraper.sh"
+spawn-at-startup "~/start_scraper.sh"
 
 spawn-at-startup "waybar"
 

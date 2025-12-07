@@ -18,6 +18,7 @@ with lib; {
     protontricks
     vulkan-tools
     r2modman
+    qbittorrent
     ];
 } 
 
