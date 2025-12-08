@@ -77,7 +77,7 @@ input {
 // Remember to uncomment the node by removing "/-"! PNP(BNQ) BenQ PD2500Q G7K0453801Q
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    off
+    // off
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".

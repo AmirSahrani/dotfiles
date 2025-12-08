@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 
 
@@ -8,8 +8,12 @@
   imports = [
   ../../modules/system/fish.nix
   ../../modules/system/waybar.nix
-  ../../modules/system/rofi.nix
+  ../../modules/system/fuzzel.nix
+  ../../modules/development-tools/rust.nix
+  ../../modules/development-tools/cybersecurity.nix
+  ../../modules/development-tools/game-dev.nix
   ../../modules/academic
+  ../../modules/photography.nix
   ../../modules/socials.nix
   ../../modules/system/fonts.nix
   ../../modules/system/power_management.nix
@@ -32,24 +36,16 @@
     settings = {
          init.defaultBranch = "main";
         };
-  };
-  xdg.desktopEntries = {
-    librewolf= {
-      name = "Librewolf";
-      genericName = "Web Browser";
-      exec = "librewolf %U";
-      terminal = false;
-      categories = [ "Application" "Network" "WebBrowser" ];
-      mimeType = [ "text/html" "text/xml" ];
+    extraConfig = {
+    safe = {
+      directory = [
+          "/etc/nixos"
+        ];
+      };
     };
   };
-  stylix.targets.firefox.colorTheme.enable = true;
-  services.wpaperd.enable = true;
-  services.wpaperd.settings = {
-    eDP-1 = {
-      path = "../../wallpapers/Playground.jpg";
-    };
-  };
+  programs.firefox.enable = true;
+  programs.eww.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -58,21 +54,25 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
   
   nixpkgs.config.allowUnfreePredicate = (_: true);
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
+
+
   home.file = {
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/nvim";
+    };
+    ".config/eww" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/eww";
     };
     ".config/niri" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/niri";
@@ -109,6 +109,7 @@
   #  /etc/profiles/per-user/amir/etc/profile.d/hm-session-vars.sh
   #
 
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };
@@ -116,13 +117,25 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.alacritty.enable = true;
-  programs.kitty.enable = true;
-  
-  programs.fuzzel.enable = true;
+  programs.kitty = {
+    enable = true;
+  };
+  programs.alacritty = {
+    enable = true;
+
+
+    settings = {
+      font = {
+        normal = {
+          family = lib.mkForce "IosevkaTerm Nerd Font";
+          style = "Regular";
+        };
+        size = lib.mkForce 18;
+      };
+    };
+  };
   programs.zoxide.enable = true;
   programs.swaylock.enable = true;
-  programs.waybar.enable = true;
   services.mako.enable = true;
   services.swayidle.enable = true;
   services.polkit-gnome.enable = true;

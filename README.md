@@ -20,4 +20,6 @@ sudo nixos-rebuild switch --flake /etc/nixos/$CONFIG
 
 ```
 
+Use `uv venv .venv` in the home directory in order to have a global python install
+
 ## TODO

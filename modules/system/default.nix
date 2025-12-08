@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     nix-index
-    chayang
+    brightnessctl
     wl-clipboard
     libnotify
     cliphist
@@ -18,6 +18,7 @@
     nsxiv
     protonvpn-gui
     monitor
+    brightnessctl
 
 
 
