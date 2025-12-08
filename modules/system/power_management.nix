@@ -19,6 +19,7 @@
   {
     enable = true;
     timeouts = [
+
      {
         timeout = 55;
         command = "${pkgs.libnotify}/bin/notify-send 'Locking in 10 seconds' -t 5000";
