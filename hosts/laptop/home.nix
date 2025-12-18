@@ -35,8 +35,6 @@
     settings.user.email = "amirsahrani1@gmail.com";
     settings = {
          init.defaultBranch = "main";
-        };
-    extraConfig = {
     safe = {
       directory = [
           "/etc/nixos"

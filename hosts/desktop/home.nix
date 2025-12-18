@@ -35,7 +35,12 @@
     settings.user.email = "amirsahrani1@gmail.com";
     settings = {
          init.defaultBranch = "main";
-        };
+    safe = {
+      directory = [
+          "/etc/nixos"
+        ];
+      };
+    };
   };
   programs.eww.enable = true;
 
