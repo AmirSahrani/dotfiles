@@ -8,49 +8,36 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./amir-sahrani.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/games
-     ../../modules/cosmetics.nix
-      ../../modules/development-tools/general.nix
+      ../../modules
       ../../modules/development-tools/python.nix
-      ../../modules/system/gpu_3090.nix
+      ../../modules/development-tools/general.nix
       ../../modules/system/default.nix
+      ../../modules/system/power_management_system.nix
     ];
 
-  services.upower.enable = true;
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820"; }
-    ];
+
+
+  swapDevices = [{
+      device = "/swapfile";
+      size = 16 * 1024; # 16GB
+    }];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.firmware = [ 
-      (pkgs.runCommand "benq-edid" {} ''
-	mkdir -p $out/lib/firmware/edid
-	cp ${./monitor.bin} $out/lib/firmware/edid/benq.bin
-      '')
-    ];
   # Use latest kernel.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [     
-    "nvidia-drm.fbdev=1"
-    "video=HDMI-A-1:2560x1440@60e"
-    ];
-  boot.extraModprobeConfig = ''
-    options drm_kms_helper edid_firmware=HDMI-A-1:edid/benq.bin
-  '';
-  boot.resumeDevice = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.resumeDevice = "/swapfile";
 
-  networking.hostName = "desktop_nixos"; #Define your hostname.
+  networking.hostName = "server_nixos"; #Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -76,13 +63,12 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  services.gvfs.enable = true;
+  # services.xserver.enable = true;
+  
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland= true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -95,14 +81,14 @@
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
+  security.rtkit.enable = false;
   services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    enable = false;
+    alsa.enable = false;
+    alsa.support32Bit = false;
+    pulse.enable = false;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+    jack.enable = false;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -114,7 +100,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.fish.enable = true;
-  users.users.amir = {
+  users.users.amir_server = {
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Amir Sahrani";
@@ -135,38 +121,17 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     # Zen browser
-     inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
      wget
-     brave
      tmux
-     waybar
-     swaybg
      ripgrep
      unzip
      unrar
-     nemo
      pavucontrol
-     blueman
-     nwg-look
-     xwayland-satellite
   ];
 
   # Enabling flakes
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
-
-  # Homemanager
-  home-manager = {
-  	extraSpecialArgs = { inherit inputs; };
-  	users = {
-  		"amir" = import ./home.nix;
-		};
-	backupFileExtension = "bkp";
-  };
-
-  programs.niri.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -179,19 +144,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
- services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      # PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-    };
-  };
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ]; 
+  # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
