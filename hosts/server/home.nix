@@ -26,14 +26,12 @@
     settings.user.email = "amirsahrani1@gmail.com";
     settings = {
          init.defaultBranch = "main";
+	 safe = {
+	   directory = [
+	     "/etc/nixos"
+	     ];
+	  };
         };
-    extraConfig = {
-    safe = {
-      directory = [
-          "/etc/nixos"
-        ];
-      };
-    };
   };
 
   # This value determines the Home Manager release that your configuration is
