@@ -34,7 +34,7 @@
 
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.resumeDevice = "/swapfile";
+  boot.resumeDevice = "/dev/disk/by-uuid/126468a1-37e9-41bc-9bb1-18e9036a6379";
 
 
   networking.hostName = "nixos_laptop"; #Define your hostname.
