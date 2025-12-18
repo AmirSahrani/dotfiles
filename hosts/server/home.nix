@@ -22,11 +22,18 @@
     };
   programs.git = {
     enable = true;
-    settings.user.name = "Amir Server";
+    settings.user.name = "Amir Sahrani";
     settings.user.email = "amirsahrani1@gmail.com";
     settings = {
          init.defaultBranch = "main";
         };
+    extraConfig = {
+    safe = {
+      directory = [
+          "/etc/nixos"
+        ];
+      };
+    };
   };
 
   # This value determines the Home Manager release that your configuration is
