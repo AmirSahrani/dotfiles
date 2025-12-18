@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
       ../../modules
       ../../modules/development-tools/python.nix
       ../../modules/development-tools/general.nix
@@ -16,10 +17,13 @@
     ];
 
 
-
+  fileSystems."/mnt/media-storage" = {
+    device = "/dev/disk/by-uuid/d9340163-4e75-490d-8a2c-751e789febd9";  # Adjust partition as needed
+    fsType = "ext4";  # or "btrfs", "xfs", whatever your filesystem is
+    options = [ "defaults" ];
+  };
   swapDevices = [{
       device = "/swapfile";
-      size = 16 * 1024; # 16GB
     }];
 
   # Bootloader.
@@ -38,6 +42,24 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   hardware.bluetooth.enable = false;
+
+
+  services.immich = {
+    enable = true;
+    host = "::";  # Listen on all IPv6 interfaces (includes IPv4-mapped)
+    # or use "0.0.0.0" for IPv4 only
+    port = 2283;
+    mediaLocation = "/mnt/media-storage/immich-media";
+  };
+  virtualisation.docker.enable= true;
+
+  home-manager = {
+  	extraSpecialArgs = { inherit inputs; };
+  	users = {
+  		"amir_server" = import ./home.nix;
+		};
+	backupFileExtension = "bkp";
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -100,6 +122,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.fish.enable = true;
+
   users.users.amir_server = {
     shell = pkgs.fish;
     isNormalUser = true;
@@ -126,7 +149,7 @@
      ripgrep
      unzip
      unrar
-     pavucontrol
+     immich-cli
   ];
 
   # Enabling flakes
@@ -147,7 +170,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 2283 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

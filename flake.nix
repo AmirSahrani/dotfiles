@@ -49,6 +49,7 @@
           ./modules
           ./hosts/server/configuration.nix
           ./hosts/server/hardware-configuration.nix
+          inputs.home-manager.nixosModules.default
         ];
       };
 
