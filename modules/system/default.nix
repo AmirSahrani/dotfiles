@@ -33,5 +33,6 @@
 	xdg-desktop-portal-gtk
   ];
   services.udisks2.enable = true;
+  services.tailscale.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
 }
