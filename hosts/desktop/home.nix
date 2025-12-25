@@ -16,7 +16,6 @@
   ../../modules/photography.nix
   ../../modules/socials.nix
   ../../modules/system/fonts.nix
-  ../../modules/system/power_management.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -132,8 +131,6 @@
     };
   };
   programs.zoxide.enable = true;
-  programs.swaylock.enable = true;
   services.mako.enable = true;
-  services.swayidle.enable = true;
   services.polkit-gnome.enable = true;
 }

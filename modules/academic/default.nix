@@ -16,6 +16,7 @@ with lib; {
   sioyek
   rendercv
   thunderbird
+  koreader
   poppler-utils
     ];
 }

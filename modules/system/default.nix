@@ -34,5 +34,12 @@
   ];
   services.udisks2.enable = true;
   services.tailscale.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "amir";
+    group = "users";
+    dataDir = "/home/amir/.local/share/syncthing";
+    configDir = "/home/amir/.config/syncthing";
+  };
   hardware.logitech.wireless.enableGraphical = true;
 }
