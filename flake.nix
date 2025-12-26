@@ -8,10 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  stylix = {
+  /* stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };   
+    };    */
   zen-browser = {
         url = "github:youwen5/zen-browser-flake";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -29,7 +29,7 @@
           ./hosts/desktop/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
           inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
         ];
       };
     laptop = nixpkgs.lib.nixosSystem {
@@ -39,7 +39,7 @@
           ./hosts/laptop/configuration.nix
           ./hosts/laptop/hardware-configuration.nix
           inputs.home-manager.nixosModules.default
-          inputs.stylix.nixosModules.stylix
+          # inputs.stylix.nixosModules.stylix
         ];
       };
 

@@ -1,0 +1,3 @@
+[submodule "dotfiles/.config/DankMaterialShell/plugins/.repos/0026f1eba8dedaec"]
+	path = dotfiles/.config/DankMaterialShell/plugins/.repos/0026f1eba8dedaec
+	url = https://github.com/AvengeMedia/dms-plugins

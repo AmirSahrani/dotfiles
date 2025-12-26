@@ -67,6 +67,9 @@
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/nvim";
     };
+    ".config/DankMaterialShell" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/DankMaterialShell";
+    };
     ".config/eww" = {
       source = config.lib.file.mkOutOfStoreSymlink "/etc/nixos/dotfiles/.config/eww";
     };

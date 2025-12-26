@@ -1,7 +1,7 @@
 {configs, lib, pkgs, ...}:
 
 {
-  stylix.enableReleaseChecks = false;
+  /* stylix.enableReleaseChecks = false;
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
 
@@ -14,7 +14,7 @@
       desktop = 1.0;
       popups = 0.9;
     };
-
+*/
   services.hardware.openrgb = { 
     enable = true; 
     package = pkgs.openrgb-with-all-plugins; 

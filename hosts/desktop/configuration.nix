@@ -141,7 +141,7 @@
      wget
      brave
      tmux
-     waybar
+     swaybg
      ripgrep
      unzip
      unrar
