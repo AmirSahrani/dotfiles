@@ -16,10 +16,10 @@
       ../../modules/system/gpu_1050.nix
       ../../modules/development-tools/python.nix
       # ../../modules/development-tools/cybersecurity.nix
+      ../../modules/development-tools/modelling.nix
       # ../../modules/development-tools/game-dev.nix
       ../../modules/development-tools/general.nix
       ../../modules/system/default.nix
-      ../../modules/system/power_management_system.nix
     ];
 
 

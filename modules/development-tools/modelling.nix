@@ -4,5 +4,6 @@
   environment.systemPackages = with pkgs; [
     freecad
     blender
+    prusa-slicer
     ];
 }
