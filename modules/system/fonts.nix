@@ -11,10 +11,10 @@
   fonts.fontconfig.enable = true;
 
   # Optionally set default fonts
-  fonts.fontconfig.defaultFonts = {
+  /* fonts.fontconfig.defaultFonts = {
     monospace = [ "Ioveska Nerd Font" ]; 
     serif = [  "Liberation Serif" "Vazirmatn" ];
     sansSerif = [ "Ubuntu" "Vazirmatn" ];
-  };
+  }; */
 }
 

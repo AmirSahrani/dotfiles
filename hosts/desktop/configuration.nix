@@ -27,12 +27,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  hardware.firmware = [ 
-      (pkgs.runCommand "benq-edid" {} ''
-	mkdir -p $out/lib/firmware/edid
-	cp ${./monitor.bin} $out/lib/firmware/edid/benq.bin
-      '')
-    ];
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [     

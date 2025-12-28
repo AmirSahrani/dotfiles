@@ -13,8 +13,8 @@
       terminal = 0.8;
       desktop = 1.0;
       popups = 0.9;
-    };
-*/
+    }; */
+
   services.hardware.openrgb = { 
     enable = true; 
     package = pkgs.openrgb-with-all-plugins; 

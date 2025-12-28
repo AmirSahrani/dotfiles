@@ -11,6 +11,7 @@
   ../../modules/system/fuzzel.nix
   ../../modules/development-tools/rust.nix
   ../../modules/development-tools/cybersecurity.nix
+  ../../modules/development-tools/modelling.nix
   ../../modules/development-tools/game-dev.nix
   ../../modules/academic
   ../../modules/photography.nix
@@ -124,6 +125,8 @@
 
 
     settings = {
+      window.opacity = 0.8;
+      general.import = ["~/.config/alacritty/dank-theme.toml"];
       font = {
         normal = {
           family = lib.mkForce "IosevkaTerm Nerd Font";
