@@ -33,9 +33,15 @@
     "nvidia-drm.fbdev=1"
     "video=HDMI-A-1:2560x1440@60e"
     ];
+
   boot.extraModprobeConfig = ''
-    options drm_kms_helper edid_firmware=HDMI-A-1:edid/benq.bin
+    options v4l2loopback devices=2 video_nr=10,11 card_label="OBS Cam,scrcpy" exclusive_caps=1,1
   '';
+  boot.kernelModules = [  "v4l2loopback" ];
+
+  boot.extraModulePackages = [  config.boot.kernelPackages.v4l2loopback  ];
+
+
   boot.resumeDevice = "/dev/disk/by-uuid/039c8f5e-2cf2-4ab3-8d01-733f8fec6820";
 
   networking.hostName = "desktop_nixos"; #Define your hostname.
@@ -113,7 +119,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Amir Sahrani";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel"  "video"];
     packages = with pkgs; [
     ];
     };

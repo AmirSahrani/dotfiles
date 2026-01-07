@@ -18,5 +18,6 @@ with lib; {
   thunderbird
   koreader
   poppler-utils
+  teams-for-linux
     ];
 }

@@ -5,5 +5,6 @@
     freecad
     blender
     prusa-slicer
+    orca-slicer
     ];
 }

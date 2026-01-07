@@ -18,20 +18,39 @@
     nsxiv
     protonvpn-gui
     monitor
+    easyeffects
     brightnessctl
 
-
+    # Webcam
+    ffmpeg-full
+    scrcpy
 
     playerctl
     pwvucontrol
     vlc
     mpv
 
+
+    onlyoffice-desktopeditors
+
   ];
   xdg.portal.extraPortals = with pkgs ; [
 	xdg-desktop-portal-hyprland
 	xdg-desktop-portal-gtk
   ];
+
+  programs.obs-studio = {
+      enable = true;
+
+      # optional Nvidia hardware acceleration
+      package = (
+	pkgs.obs-studio.override {
+	  cudaSupport = true;
+	}
+      );
+
+	  enableVirtualCamera = true;
+    };
   services.udisks2.enable = true;
   services.tailscale.enable = true;
   services.syncthing = {

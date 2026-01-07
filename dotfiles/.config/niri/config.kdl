@@ -438,7 +438,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty" "-e" "tmux"; }
     Mod+B hotkey-overlay-title="Open a Browser: Zen" { spawn "zen"; }
     Mod+D hotkey-overlay-title="Run an Application: launcher" { spawn "dms" "ipc" "spotlight" "toggle"; }
-    Mod+P hotkey-overlay-title="Run an Application: powermenu" { spawn "dms" "ipc" "powermenu" "toggle"; }
+    Alt+P hotkey-overlay-title="Run an Application: powermenu" { spawn "dms" "ipc" "powermenu" "toggle"; }
     Super+Shift+C hotkey-overlay-title="Clipboard History" {spawn "dms" "ipc" "clipboard" "toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 

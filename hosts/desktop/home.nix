@@ -22,7 +22,6 @@
   # manage.
   home.username = "amir";
   home.homeDirectory = "/home/amir";
-
   programs.gh = {
       enable = true;
       gitCredentialHelper = {
@@ -42,7 +41,6 @@
       };
     };
   };
-  programs.eww.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -54,7 +52,6 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
   
   nixpkgs.config.allowUnfreePredicate = (_: true);
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [

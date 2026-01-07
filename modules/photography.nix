@@ -6,7 +6,9 @@
   darktable
   davinci-resolve
   krita
+  pastel
 
   ];
+
 }
 
